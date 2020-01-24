@@ -23,6 +23,15 @@
 			>;
 		};
 
+        pinctrl_ecspi3: ecspi3grp {
+			fsl,pins = <
+				MX6UL_PAD_UART2_TX_DATA__GPIO1_IO20		0x100b1
+				MX6UL_PAD_UART2_RX_DATA__ECSPI3_SCLK	0x100b1
+				MX6UL_PAD_UART2_CTS_B__ECSPI3_MOSI		0x100b1
+				MX6UL_PAD_UART2_RTS_B__ECSPI3_MISO		0x100b1
+				>;
+		};
+
         pinctrl_enet1_alt: enet1grp {
 			fsl,pins = <
 				MX6UL_PAD_ENET1_RX_EN__ENET1_RX_EN	0x1b0b0
@@ -53,6 +62,21 @@
 			>;
 		};
     };
+};
+
+&ecspi3 {
+	fsl,spi-num-chipselects = <1>;
+	cs-gpios = <&gpio1 20 0>;
+	pinctrl-names = "default";
+	pinctrl-0 = <&pinctrl_ecspi3>;
+	status = "okay";
+
+	#address-cells = <1>;
+	#size-cells = <0>;
+};
+
+&i2c1 {
+	status = "okay";
 };
 
 &i2c2 {
@@ -134,7 +158,7 @@
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_uart3>;
 	fsl,rs485-gpio-txen = <&gpio1 18 GPIO_ACTIVE_HIGH>;
-    linux,rs485-enabled-at-boot-time;
+	linux,rs485-enabled-at-boot-time;
 	status = "okay";
 };
 

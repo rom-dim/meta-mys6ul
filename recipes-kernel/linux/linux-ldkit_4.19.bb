@@ -18,4 +18,4 @@ SRC_URI = "git://source.codeaurora.org/external/imx/linux-imx;protocol=https;bra
 
 S = "${WORKDIR}/git"
 
-COMPATIBLE_MACHINE = "(brighttree|mys6ul14x14|udooneo)"
+COMPATIBLE_MACHINE = "(mys6ul14x14)"
