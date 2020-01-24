@@ -1,0 +1,25 @@
+diff --git a/arch/arm/cpu/armv7/mx6/Kconfig b/arch/arm/cpu/armv7/mx6/Kconfig
+index 44a3860..f8385d8 100644
+--- a/arch/arm/cpu/armv7/mx6/Kconfig
++++ b/arch/arm/cpu/armv7/mx6/Kconfig
+@@ -210,6 +210,13 @@ config TARGET_WANDBOARD
+ 
+ config TARGET_WARP
+ 	bool "WaRP"
++	
++config TARGET_MYS_IMX6UL_14X14
++	bool "Support MYiR mys-imx6ul_14x14"
++	select MX6UL
++	select SUPPORT_SPL
++	select DM
++	select DM_THERMAL
+
+ endchoice
+ 
+@@ -247,5 +254,6 @@ source "board/tqc/tqma6/Kconfig"
+ source "board/udoo/Kconfig"
+ source "board/wandboard/Kconfig"
+ source "board/warp/Kconfig"
++source "board/myir/mys_imx6ul_14x14/Kconfig"
+ 
+ endif
