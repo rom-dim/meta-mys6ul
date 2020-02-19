@@ -8,8 +8,9 @@ require recipes-kernel/linux/linux-dtb.inc
 require linux-ldkit.inc
 
 SRCREV = "rel_imx_4.1.15_2.1.0_ga"
+SRCBRANCH="imx_4.1.15_2.0.0_ga"
 
-SRC_URI = "git://git.freescale.com/git/cgit.cgi/imx/linux-imx.git;branch=imx_4.1.15_2.0.0_ga;protocol=http; \
+SRC_URI = "git://source.codeaurora.org/external/imx/linux-imx;protocol=https;branch=${SRCBRANCH} \
 	   file://defconfig \
 	   file://dts/ \
 	   file://wm8904.patch \

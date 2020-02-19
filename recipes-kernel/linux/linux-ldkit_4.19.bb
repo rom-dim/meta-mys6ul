@@ -11,7 +11,7 @@ require linux-ldkit.inc
 
 SRCREV = "rel_imx_4.19.35_1.1.0"
 SRCBRANCH = "imx_4.19.35_1.1.0"
-SRC_URI = "git://source.codeaurora.org/external/imx/linux-imx;protocol=https;branch=${SRCBRANCH};protocol=http; \
+SRC_URI = "git://source.codeaurora.org/external/imx/linux-imx;protocol=https;branch=${SRCBRANCH} \
 	   file://defconfig \
 	   file://dts/ \
 	   "
